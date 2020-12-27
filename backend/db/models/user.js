@@ -1,4 +1,7 @@
 'use strict';
+const { Validator } = require('sequelize');
+const bcrypt = require('bcryptjs');
+
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
     username: {
@@ -44,7 +47,7 @@ module.exports = (sequelize, DataTypes) => {
       loginUser: {
         attributes: {},
       },
-    }, 
+    },  
   });
   User.associate = function(models) {
     // associations can be defined here
